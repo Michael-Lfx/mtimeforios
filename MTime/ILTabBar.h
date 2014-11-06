@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ILTabBar : UITabBar
+@interface ILTabBar : UIView
 
 @end

@@ -10,19 +10,19 @@
             <rect key="frame" x="0.0" y="0.0" width="89" height="90"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_setok" id="3Nz-lj-BjJ" userLabel="背景">
-                    <rect key="frame" x="10" y="0.0" width="69" height="83"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_recharge_bg" id="3Nz-lj-BjJ" userLabel="背景">
+                    <rect key="frame" x="10" y="1" width="69" height="80"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i2d-ua-gLo" userLabel="下面的文字">
-                    <rect key="frame" x="0.0" y="58" width="89" height="22"/>
+                    <rect key="frame" x="0.0" y="56" width="89" height="22"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="PyA-Pn-fA6" userLabel="文字">
-                    <rect key="frame" x="22" y="7" width="45" height="46"/>
+                    <rect key="frame" x="20" y="7" width="50" height="46"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
@@ -35,6 +35,6 @@
         </view>
     </objects>
     <resources>
-        <image name="btn_setok" width="93" height="59"/>
+        <image name="pic_recharge_bg" width="423" height="290"/>
     </resources>
 </document>

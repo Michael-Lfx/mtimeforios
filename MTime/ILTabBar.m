@@ -12,6 +12,7 @@
 @interface ILTabBar ()
 
 @property(nonatomic,strong)NSMutableArray * btns;
+@property(nonatomic,strong)UIButton * homeBtn;
 
 @end
 
@@ -21,9 +22,8 @@
 
     if (self=[super initWithFrame:frame]) {
         [self initBtns];
-          [self initBackground];
-       
-//        [self initButtons];
+        [self initBackground];
+        [self initHomeButton];
     }
     return self;
 }
@@ -37,18 +37,51 @@
 
 -(void)layoutSubviews{
     [super layoutSubviews];
-    [self initButtons];
-   
+    [self layoutBtns];
+    [self layoutHomeButton];
 }
 
+-(void)initHomeButton{
+    
+    
+//    UIViewAutoresizingNone                 = 0,
+//    UIViewAutoresizingFlexibleLeftMargin   = 1 << 0,
+//    UIViewAutoresizingFlexibleWidth        = 1 << 1,
+//    UIViewAutoresizingFlexibleRightMargin  = 1 << 2,
+//    UIViewAutoresizingFlexibleTopMargin    = 1 << 3,
+//    UIViewAutoresizingFlexibleHeight       = 1 << 4,
+//    UIViewAutoresizingFlexibleBottomMargin = 1 << 5
+    
+    UIImage *homeBtnBg=[UIImage imageNamed:@"botmenu_icon_index"];
+    UIButton *homeBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+    //[homeBtn setBackgroundColor:[UIColor blackColor]];
+    //homeBtn.autoresizesSubviews=NO;
+    homeBtn.bounds=CGRectMake(0, 0, homeBtnBg.size.width*.5,homeBtnBg.size.height*.5);
+    homeBtn.autoresizingMask=
+    UIViewAutoresizingFlexibleLeftMargin|
+    UIViewAutoresizingFlexibleRightMargin|
+    UIViewAutoresizingFlexibleTopMargin|
+    UIViewAutoresizingFlexibleBottomMargin|
+    UIViewAutoresizingFlexibleWidth|
+    UIViewAutoresizingFlexibleHeight;
+    
+    
+    [homeBtn setImage:homeBtnBg forState:UIControlStateNormal];
+    [self addSubview:homeBtn];
+    self.homeBtn=homeBtn;
+}
+
+-(void)layoutHomeButton{
+    self.homeBtn.center=CGPointMake(160,23);
+}
 
 -(void)initBackground{
     UIImage *bg=[UIImage imageNamed:@"botmenu_bg"];
     UIGraphicsBeginImageContext(self.bounds.size);
-    [bg drawInRect:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
+    [bg drawInRect:CGRectMake(0, 5, self.bounds.size.width, self.bounds.size.height-5)];
     UIImage *fitBg= UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    self.backgroundImage=fitBg;
+    self.backgroundColor=[UIColor colorWithPatternImage:fitBg];
 }
 
 -(void)initBtns{
@@ -73,14 +106,12 @@
     }
 }
 
--(void)initButtons{
+-(void)layoutBtns{
     CGFloat btnW=self.bounds.size.width/self.btns.count;
     CGFloat btnH=self.bounds.size.height;
     for (int i=0; i<self.btns.count; i++) {
         ILTabBarButton *tabBarBtn =self.btns[i];
-        tabBarBtn.frame=CGRectMake(i*btnW, 0, btnW, btnH);
-        NSLog(@"%f----%f",btnW,btnH);
-        //[self addSubview:tabBarBtn];
+        tabBarBtn.frame=CGRectMake(i*btnW, 5, btnW, btnH);
     }
     //TODO:HOME 时光精选得特别做
 }

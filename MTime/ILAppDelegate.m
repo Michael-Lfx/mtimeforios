@@ -22,9 +22,9 @@
     tabBarCtrller.selectedIndex=2;
     
     
-    ILTabBar *myTabBar=[[ILTabBar alloc]initWithFrame:tabBarCtrller.tabBar.bounds];
-    [tabBarCtrller.tabBar addSubview:myTabBar];
-    
+    ILTabBar *myTabBar=[[ILTabBar alloc]initWithFrame:tabBarCtrller.tabBar.frame];
+    [tabBarCtrller.view addSubview:myTabBar];
+    [tabBarCtrller.tabBar removeFromSuperview];
     self.window.rootViewController=tabBarCtrller;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
