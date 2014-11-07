@@ -14,8 +14,17 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *desc;
 
-+(instancetype)tabBarButtonWithImage:(NSString *)image selectedImage:(NSString *)selectedImage;
+/**
+ *  初始化TabBar按钮项
+ *
+ *  @param image         图标
+ *  @param selectedImage 选择的图标（暂未使用）
+ *
+ *  @return 实例
+ */
++ (instancetype)tabBarButtonWithImage:(NSString *)image
+						selectedImage:(NSString *)selectedImage;
 
--(void)setTitle:(NSString *)title;
+- (void)setTitle:(NSString *)title;
 
 @end

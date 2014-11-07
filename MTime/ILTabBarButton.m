@@ -23,14 +23,14 @@
     return self;
 }
 
--(id)initWithCoder:(NSCoder *)aDecoder{
+- (id)initWithCoder:(NSCoder *)aDecoder{
     self=[super initWithCoder:aDecoder];
     if (self) {
     }
     return self;
 }
 
-+(instancetype)tabBarButtonWithImage:(NSString *)image selectedImage:(NSString *)selectedImage{
++ (instancetype)tabBarButtonWithImage:(NSString *)image selectedImage:(NSString *)selectedImage{
     ILTabBarButton *tabBarBtn= [[[NSBundle mainBundle]loadNibNamed:@"TabBarButton" owner:self options:nil]lastObject];
     [tabBarBtn.icon setImage:[UIImage imageNamed:image]];
     tabBarBtn.backgroundColor=[UIColor clearColor];
@@ -38,7 +38,7 @@
     return tabBarBtn;
 }
 
--(void)setTitle:(NSString *)title{
+- (void)setTitle:(NSString *)title{
     [self.desc setText:title];
 }
 @end

@@ -19,5 +19,5 @@
     return self;
 }
 
--(void)setHighlighted:(BOOL)highlighted{}
+- (void)setHighlighted:(BOOL)highlighted{}
 @end

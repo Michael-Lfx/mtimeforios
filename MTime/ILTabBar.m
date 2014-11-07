@@ -18,7 +18,7 @@
 
 @implementation ILTabBar
 
--(instancetype)initWithFrame:(CGRect)frame{
+- (instancetype)initWithFrame:(CGRect)frame{
 
     if (self=[super initWithFrame:frame]) {
         [self initBtns];
@@ -28,20 +28,20 @@
     return self;
 }
 
--(id)initWithCoder:(NSCoder *)aDecoder{
+- (id)initWithCoder:(NSCoder *)aDecoder{
     if (self=[super initWithCoder:aDecoder]) {
         
     }
     return self;
 }
 
--(void)layoutSubviews{
+- (void)layoutSubviews{
     [super layoutSubviews];
     [self layoutBtns];
     [self layoutHomeButton];
 }
 
--(void)initHomeButton{
+- (void)initHomeButton{
     
     
 //    UIViewAutoresizingNone                 = 0,
@@ -71,11 +71,11 @@
     self.homeBtn=homeBtn;
 }
 
--(void)layoutHomeButton{
+- (void)layoutHomeButton{
     self.homeBtn.center=CGPointMake(160,23);
 }
 
--(void)initBackground{
+- (void)initBackground{
     UIImage *bg=[UIImage imageNamed:@"botmenu_bg"];
     UIGraphicsBeginImageContext(self.bounds.size);
     [bg drawInRect:CGRectMake(0, 5, self.bounds.size.width, self.bounds.size.height-5)];
@@ -84,7 +84,7 @@
     self.backgroundColor=[UIColor colorWithPatternImage:fitBg];
 }
 
--(void)initBtns{
+- (void)initBtns{
     NSArray *tabBarPics=@[@"botmenu_icon_ciname",
                           @"botmenu_icon_coup",
                           @"botmenu_icon_index",
@@ -106,7 +106,7 @@
     }
 }
 
--(void)layoutBtns{
+- (void)layoutBtns{
     CGFloat btnW=self.bounds.size.width/self.btns.count;
     CGFloat btnH=self.bounds.size.height;
     for (int i=0; i<self.btns.count; i++) {
@@ -116,7 +116,7 @@
     //TODO:HOME 时光精选得特别做
 }
 
--(NSMutableArray *)btns{
+- (NSMutableArray *)btns{
     if (!_btns) {
         _btns=[NSMutableArray array];
     }
