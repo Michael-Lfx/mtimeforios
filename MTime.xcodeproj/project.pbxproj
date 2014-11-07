@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		670611A31A0BBBE000D01500 /* ILHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 670611A21A0BBBE000D01500 /* ILHomeController.m */; };
+		67756DC71A0D0353004FA6B3 /* ILBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67756DC61A0D0353004FA6B3 /* ILBaseController.m */; };
+		67756DCE1A0D03B2004FA6B3 /* ILCoupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67756DCD1A0D03B2004FA6B3 /* ILCoupController.m */; };
+		67756DD11A0D0D4E004FA6B3 /* ILButtonWithNoHeightLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 67756DD01A0D0D4E004FA6B3 /* ILButtonWithNoHeightLight.m */; };
 		67829F231A0A5B29009174DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67829F221A0A5B29009174DF /* Foundation.framework */; };
 		67829F251A0A5B29009174DF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67829F241A0A5B29009174DF /* CoreGraphics.framework */; };
 		67829F271A0A5B29009174DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67829F261A0A5B29009174DF /* UIKit.framework */; };
@@ -42,6 +45,12 @@
 /* Begin PBXFileReference section */
 		670611A11A0BBBE000D01500 /* ILHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILHomeController.h; sourceTree = "<group>"; };
 		670611A21A0BBBE000D01500 /* ILHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILHomeController.m; sourceTree = "<group>"; };
+		67756DC51A0D0353004FA6B3 /* ILBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILBaseController.h; sourceTree = "<group>"; };
+		67756DC61A0D0353004FA6B3 /* ILBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILBaseController.m; sourceTree = "<group>"; };
+		67756DCC1A0D03B2004FA6B3 /* ILCoupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILCoupController.h; sourceTree = "<group>"; };
+		67756DCD1A0D03B2004FA6B3 /* ILCoupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILCoupController.m; sourceTree = "<group>"; };
+		67756DCF1A0D0D4E004FA6B3 /* ILButtonWithNoHeightLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILButtonWithNoHeightLight.h; sourceTree = "<group>"; };
+		67756DD01A0D0D4E004FA6B3 /* ILButtonWithNoHeightLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILButtonWithNoHeightLight.m; sourceTree = "<group>"; };
 		67829F1F1A0A5B29009174DF /* MTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67829F221A0A5B29009174DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		67829F241A0A5B29009174DF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -129,6 +138,83 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		67756DC01A0CFFA8004FA6B3 /* Infraustucture */ = {
+			isa = PBXGroup;
+			children = (
+				67829F511A0A5B6A009174DF /* Main.storyboard */,
+				67829F561A0A5B90009174DF /* Views */,
+				67829F551A0A5B8D009174DF /* Models */,
+				67829F541A0A5B85009174DF /* Controllers */,
+			);
+			name = Infraustucture;
+			sourceTree = "<group>";
+		};
+		67756DC11A0D02DC004FA6B3 /* Coup */ = {
+			isa = PBXGroup;
+			children = (
+				67756DC41A0D0310004FA6B3 /* Models */,
+				67756DC31A0D030C004FA6B3 /* Views */,
+				67756DC21A0D0304004FA6B3 /* Controllers */,
+			);
+			name = Coup;
+			sourceTree = "<group>";
+		};
+		67756DC21A0D0304004FA6B3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				67756DCC1A0D03B2004FA6B3 /* ILCoupController.h */,
+				67756DCD1A0D03B2004FA6B3 /* ILCoupController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		67756DC31A0D030C004FA6B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		67756DC41A0D0310004FA6B3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		67756DC81A0D035D004FA6B3 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				67756DCB1A0D0387004FA6B3 /* Views */,
+				67756DCA1A0D0381004FA6B3 /* Models */,
+				67756DC91A0D037E004FA6B3 /* Controllers */,
+			);
+			name = Movie;
+			sourceTree = "<group>";
+		};
+		67756DC91A0D037E004FA6B3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				67829F581A0A5C66009174DF /* ILMovieController.h */,
+				67829F591A0A5C66009174DF /* ILMovieController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		67756DCA1A0D0381004FA6B3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		67756DCB1A0D0387004FA6B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		67829F161A0A5B29009174DF = {
 			isa = PBXGroup;
 			children = (
@@ -163,11 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				67829F531A0A5B82009174DF /* Classes */,
-				67829F311A0A5B29009174DF /* ILAppDelegate.h */,
-				67829F321A0A5B29009174DF /* ILAppDelegate.m */,
-				67829F341A0A5B29009174DF /* Images.xcassets */,
 				67829F291A0A5B29009174DF /* Supporting Files */,
-				67829F511A0A5B6A009174DF /* Main.storyboard */,
 			);
 			path = MTime;
 			sourceTree = "<group>";
@@ -175,6 +257,9 @@
 		67829F291A0A5B29009174DF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				67829F311A0A5B29009174DF /* ILAppDelegate.h */,
+				67829F321A0A5B29009174DF /* ILAppDelegate.m */,
+				67829F341A0A5B29009174DF /* Images.xcassets */,
 				67829F2A1A0A5B29009174DF /* MTime-Info.plist */,
 				67829F2B1A0A5B29009174DF /* InfoPlist.strings */,
 				67829F2E1A0A5B29009174DF /* main.m */,
@@ -204,10 +289,10 @@
 		67829F531A0A5B82009174DF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				67756DC81A0D035D004FA6B3 /* Movie */,
+				67756DC01A0CFFA8004FA6B3 /* Infraustucture */,
+				67756DC11A0D02DC004FA6B3 /* Coup */,
 				6706119D1A0BBBBA00D01500 /* Home */,
-				67829F561A0A5B90009174DF /* Views */,
-				67829F551A0A5B8D009174DF /* Models */,
-				67829F541A0A5B85009174DF /* Controllers */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -215,10 +300,10 @@
 		67829F541A0A5B85009174DF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				67829F581A0A5C66009174DF /* ILMovieController.h */,
-				67829F591A0A5C66009174DF /* ILMovieController.m */,
 				67829F5B1A0A5C95009174DF /* ILTabBarController.h */,
 				67829F5C1A0A5C95009174DF /* ILTabBarController.m */,
+				67756DC51A0D0353004FA6B3 /* ILBaseController.h */,
+				67756DC61A0D0353004FA6B3 /* ILBaseController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -240,6 +325,8 @@
 				67829F671A0A6780009174DF /* TabBarButton.xib */,
 				67829F691A0A6DE7009174DF /* ILTabBarIcon.h */,
 				67829F6A1A0A6DE7009174DF /* ILTabBarIcon.m */,
+				67756DCF1A0D0D4E004FA6B3 /* ILButtonWithNoHeightLight.h */,
+				67756DD01A0D0D4E004FA6B3 /* ILButtonWithNoHeightLight.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -343,6 +430,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				67829F5D1A0A5C95009174DF /* ILTabBarController.m in Sources */,
+				67756DCE1A0D03B2004FA6B3 /* ILCoupController.m in Sources */,
+				67756DD11A0D0D4E004FA6B3 /* ILButtonWithNoHeightLight.m in Sources */,
+				67756DC71A0D0353004FA6B3 /* ILBaseController.m in Sources */,
 				67829F601A0A5E9E009174DF /* ILTabBar.m in Sources */,
 				67829F2F1A0A5B29009174DF /* main.m in Sources */,
 				67829F5A1A0A5C66009174DF /* ILMovieController.m in Sources */,

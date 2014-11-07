@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ILTabBarDelegate <NSObject>
+
+@optional
+-(void)tabBarToggleFrom:(NSInteger)form andTo:(NSInteger)to;
+
+@end
+
 @interface ILTabBar : UIView
+
+@property(nonatomic,weak)id<ILTabBarDelegate>  delegate;
 
 @end

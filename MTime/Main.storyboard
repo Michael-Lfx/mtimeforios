@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="468" y="-677"/>
         </scene>
-        <!--View Controller-->
+        <!--CoupViewController-->
         <scene sceneID="GYj-Kb-dG3">
             <objects>
-                <viewController id="TUf-ba-40k" sceneMemberID="viewController">
+                <viewController id="TUf-ba-40k" userLabel="CoupViewController" customClass="ILCoupController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IS3-wb-Z7G"/>
                         <viewControllerLayoutGuide type="bottom" id="MN8-EN-7im"/>

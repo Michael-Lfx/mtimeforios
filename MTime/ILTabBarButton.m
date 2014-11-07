@@ -30,7 +30,7 @@
     return self;
 }
 
-+ (instancetype)tabBarButtonWithImage:(NSString *)image selectedImage:(NSString *)selectedImage{
++ (instancetype)tabBarButtonWithImage:(NSString *)image heightLightImage:(NSString *)selectedImage{
     ILTabBarButton *tabBarBtn= [[[NSBundle mainBundle]loadNibNamed:@"TabBarButton" owner:self options:nil]lastObject];
     [tabBarBtn.icon setImage:[UIImage imageNamed:image]];
     tabBarBtn.backgroundColor=[UIColor clearColor];
@@ -40,5 +40,11 @@
 
 - (void)setTitle:(NSString *)title{
     [self.desc setText:title];
+}
+
+-(void)setHieghtLight:(BOOL)isHeightLight{
+    self.backgroundIcon.image=isHeightLight
+        ?[UIImage imageNamed:@""]
+        :nil;
 }
 @end
