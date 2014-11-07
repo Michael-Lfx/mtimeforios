@@ -14,6 +14,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *desc;
 
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundIcon;
+
+
 /**
  *  初始化TabBar按钮项
  *
@@ -23,8 +26,10 @@
  *  @return 实例
  */
 + (instancetype)tabBarButtonWithImage:(NSString *)image
-						selectedImage:(NSString *)selectedImage;
+						heightLightImage:(NSString *)selectedImage;
 
 - (void)setTitle:(NSString *)title;
+
+-(void)setHieghtLight:(BOOL)isHeightLight;
 
 @end

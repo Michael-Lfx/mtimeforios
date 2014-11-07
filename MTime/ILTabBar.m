@@ -8,11 +8,16 @@
 
 #import "ILTabBar.h"
 #import "ILTabBarButton.h"
+#import "ILButtonWithNoHeightLight.h"
+#define ILTopicIndex 3
 
-@interface ILTabBar ()
+@interface ILTabBar (){
+    UIView *_prevTabBarBtn;
+}
 
 @property(nonatomic,strong)NSMutableArray * btns;
 @property(nonatomic,strong)UIButton * homeBtn;
+@property(nonatomic,strong)NSArray *tabBarPositionIndexs;
 
 @end
 
@@ -23,7 +28,6 @@
     if (self=[super initWithFrame:frame]) {
         [self initBtns];
         [self initBackground];
-        [self initHomeButton];
     }
     return self;
 }
@@ -35,28 +39,54 @@
     return self;
 }
 
+#pragma mark -propertyoverride
+-(NSArray *)tabBarPositionIndexs{
+    if (_tabBarPositionIndexs==nil) {
+        _tabBarPositionIndexs=@[@(0),@(1),@(4)];
+    }
+    return _tabBarPositionIndexs;
+}
+
+- (NSMutableArray *)btns{
+    if (!_btns) {
+        _btns=[NSMutableArray array];
+    }
+    return _btns;
+}
+
+#pragma mark -layout
+
 - (void)layoutSubviews{
     [super layoutSubviews];
     [self layoutBtns];
     [self layoutHomeButton];
+    [self registTabBarToggle];
 }
 
+- (void)layoutHomeButton{
+    self.homeBtn.center=CGPointMake(160,23);
+}
+
+
+- (void)layoutBtns{
+    CGFloat btnW=self.bounds.size.width/self.btns.count;
+    CGFloat btnH=self.bounds.size.height;
+    for (NSNumber *position in self.tabBarPositionIndexs) {
+        int index=position.intValue;
+        ILTabBarButton *tabBarBtn =self.btns[index];
+        tabBarBtn.frame=CGRectMake(index*btnW, 5, btnW, btnH);
+    }
+    UIButton *topicBtn= self.btns[ILTopicIndex];
+    topicBtn.frame=CGRectMake(ILTopicIndex*btnW+15, 10, 35, 35);
+    //TODO:HOME 时光精选得特别做
+}
+
+#pragma mark -init
 - (void)initHomeButton{
     
-    
-//    UIViewAutoresizingNone                 = 0,
-//    UIViewAutoresizingFlexibleLeftMargin   = 1 << 0,
-//    UIViewAutoresizingFlexibleWidth        = 1 << 1,
-//    UIViewAutoresizingFlexibleRightMargin  = 1 << 2,
-//    UIViewAutoresizingFlexibleTopMargin    = 1 << 3,
-//    UIViewAutoresizingFlexibleHeight       = 1 << 4,
-//    UIViewAutoresizingFlexibleBottomMargin = 1 << 5
-    
     UIImage *homeBtnBg=[UIImage imageNamed:@"botmenu_icon_index"];
-    UIButton *homeBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-    //[homeBtn setBackgroundColor:[UIColor blackColor]];
-    //homeBtn.autoresizesSubviews=NO;
-    homeBtn.bounds=CGRectMake(0, 0, homeBtnBg.size.width*.5,homeBtnBg.size.height*.5);
+    UIButton *homeBtn=[ILButtonWithNoHeightLight buttonWithType:UIButtonTypeCustom];
+    homeBtn.bounds=CGRectMake(0, 0, homeBtnBg.size.width*.55,homeBtnBg.size.height*.55);
     homeBtn.autoresizingMask=
     UIViewAutoresizingFlexibleLeftMargin|
     UIViewAutoresizingFlexibleRightMargin|
@@ -69,11 +99,10 @@
     [homeBtn setImage:homeBtnBg forState:UIControlStateNormal];
     [self addSubview:homeBtn];
     self.homeBtn=homeBtn;
+    self.homeBtn.tag=2;
+    [self.btns addObject:self.homeBtn];
 }
 
-- (void)layoutHomeButton{
-    self.homeBtn.center=CGPointMake(160,23);
-}
 
 - (void)initBackground{
     UIImage *bg=[UIImage imageNamed:@"botmenu_bg"];
@@ -85,6 +114,7 @@
 }
 
 - (void)initBtns{
+    
     NSArray *tabBarPics=@[@"botmenu_icon_ciname",
                           @"botmenu_icon_coup",
                           @"botmenu_icon_index",
@@ -98,29 +128,57 @@
                             @"",
                             @"更多",
                             ];
-    for (int i=0; i<tabBarPics.count; i++) {
-        ILTabBarButton *tabBarBtn=[ILTabBarButton tabBarButtonWithImage:tabBarPics[i] selectedImage:nil];
+    for (int i=0;i<tabBarPics.count;i++) {
+        if (i==ILTopicIndex) {
+            //TODO 时光精选需要重构
+            UIButton *topicBtn=[ILButtonWithNoHeightLight buttonWithType:UIButtonTypeCustom];
+            [topicBtn setBackgroundImage:[UIImage imageNamed:tabBarPics[i]]
+                                forState:UIControlStateNormal];
+            [self.btns addObject:topicBtn];
+            topicBtn.tag=ILTopicIndex;
+            [self addSubview:topicBtn];
+            continue;
+        }
+        if (i==2) {
+            [self initHomeButton];
+            continue;
+        }
+        
+        ILTabBarButton *tabBarBtn=[ILTabBarButton tabBarButtonWithImage:tabBarPics[i]
+                                                       heightLightImage:nil];
+        tabBarBtn.tag=i;
         [tabBarBtn setTitle:tabBarTitles[i]];
         [self.btns addObject:tabBarBtn];
         [self addSubview:tabBarBtn];
     }
+    
+
 }
 
-- (void)layoutBtns{
-    CGFloat btnW=self.bounds.size.width/self.btns.count;
-    CGFloat btnH=self.bounds.size.height;
-    for (int i=0; i<self.btns.count; i++) {
-        ILTabBarButton *tabBarBtn =self.btns[i];
-        tabBarBtn.frame=CGRectMake(i*btnW, 5, btnW, btnH);
+-(void)registTabBarToggle{
+    for (UIView *btn in self.btns) {
+        UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self
+                                                                           action:@selector(tabExchange:)];
+        [btn addGestureRecognizer:tap];
     }
-    //TODO:HOME 时光精选得特别做
 }
 
-- (NSMutableArray *)btns{
-    if (!_btns) {
-        _btns=[NSMutableArray array];
+-(void)tabExchange:(UIView *)tabBarBtn{
+    if ([tabBarBtn isKindOfClass:[ILTabBarButton class]]) {
+        ILTabBarButton *btn=(ILTabBarButton *)tabBarBtn;
+        [btn setHieghtLight:YES];
     }
-    return _btns;
+    
+    
+    if ([_prevTabBarBtn isKindOfClass:[ILTabBarButton class]]) {
+        ILTabBarButton *btn=(ILTabBarButton *)tabBarBtn;
+        [btn setHieghtLight:NO];
+    }
+    
+    
+    if ([self.delegate respondsToSelector:@selector(tabBarToggleFrom: to:)]) {
+        [self.delegate tabBarToggleFrom:_prevTabBarBtn.tag andTo:tabBarBtn.tag];
+    }
 }
 
 @end
