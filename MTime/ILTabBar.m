@@ -7,7 +7,7 @@
 //
 
 #import "ILTabBar.h"
-#import "ILTabBarButton.h"
+#import "ILTabBarNormalButton.h"
 #import "ILButtonWithNoHeightLight.h"
 #define ILTopicIndex 3
 
@@ -73,7 +73,7 @@
     CGFloat btnH=self.bounds.size.height;
     for (NSNumber *position in self.tabBarPositionIndexs) {
         int index=position.intValue;
-        ILTabBarButton *tabBarBtn =self.btns[index];
+        ILTabBarNormalButton *tabBarBtn =self.btns[index];
         tabBarBtn.frame=CGRectMake(index*btnW, 5, btnW, btnH);
     }
     UIButton *topicBtn= self.btns[ILTopicIndex];
@@ -144,12 +144,16 @@
             continue;
         }
         
-        ILTabBarButton *tabBarBtn=[ILTabBarButton tabBarButtonWithImage:tabBarPics[i]
+        ILTabBarNormalButton *tabBarBtn=[ILTabBarNormalButton tabBarButtonWithImage:tabBarPics[i]
                                                        heightLightImage:nil];
         tabBarBtn.tag=i;
         [tabBarBtn setTitle:tabBarTitles[i]];
         [self.btns addObject:tabBarBtn];
         [self addSubview:tabBarBtn];
+        
+        
+        
+        
     }
     
 
@@ -164,14 +168,14 @@
 }
 
 -(void)tabExchange:(UIView *)tabBarBtn{
-    if ([tabBarBtn isKindOfClass:[ILTabBarButton class]]) {
-        ILTabBarButton *btn=(ILTabBarButton *)tabBarBtn;
+    if ([tabBarBtn isKindOfClass:[ILTabBarNormalButton class]]) {
+        ILTabBarNormalButton *btn=(ILTabBarNormalButton *)tabBarBtn;
         [btn setHieghtLight:YES];
     }
     
     
-    if ([_prevTabBarBtn isKindOfClass:[ILTabBarButton class]]) {
-        ILTabBarButton *btn=(ILTabBarButton *)tabBarBtn;
+    if ([_prevTabBarBtn isKindOfClass:[ILTabBarNormalButton class]]) {
+        ILTabBarNormalButton *btn=(ILTabBarNormalButton *)tabBarBtn;
         [btn setHieghtLight:NO];
     }
     

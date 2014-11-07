@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ILTabBarButton : UIView
+@interface ILTabBarNormalButton : UIView
 
 @property (weak, nonatomic) IBOutlet UIImageView *icon;
 

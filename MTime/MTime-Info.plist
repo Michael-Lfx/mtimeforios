@@ -34,9 +34,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>请允许定位，以便获取精确位置</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>是否允许在后台获取GPS位置</string>
 </dict>
 </plist>

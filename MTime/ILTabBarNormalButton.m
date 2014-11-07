@@ -6,13 +6,13 @@
 //  Copyright (c) 2014年 IL. All rights reserved.
 //
 
-#import "ILTabBarButton.h"
-@interface ILTabBarButton()
+#import "ILTabBarNormalButton.h"
+@interface ILTabBarNormalButton()
 
 
 @end
 
-@implementation ILTabBarButton
+@implementation ILTabBarNormalButton
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -31,7 +31,7 @@
 }
 
 + (instancetype)tabBarButtonWithImage:(NSString *)image heightLightImage:(NSString *)selectedImage{
-    ILTabBarButton *tabBarBtn= [[[NSBundle mainBundle]loadNibNamed:@"TabBarButton" owner:self options:nil]lastObject];
+    ILTabBarNormalButton *tabBarBtn= [[[NSBundle mainBundle]loadNibNamed:@"TabBarNormalButton" owner:self options:nil]lastObject];
     [tabBarBtn.icon setImage:[UIImage imageNamed:image]];
     tabBarBtn.backgroundColor=[UIColor clearColor];
     
