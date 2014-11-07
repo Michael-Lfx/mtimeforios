@@ -1,5 +1,5 @@
 //
-//  ILTabbarTopicButton.h
+//  ILTabBarTopicButton.h
 //  MTime
 //
 //  Created by asili on 14-11-7.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ILTabbarTopicButton : UIView
+@interface ILTabBarTopicButton : UIView
 
 @end
