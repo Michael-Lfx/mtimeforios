@@ -11,13 +11,10 @@
 
 #import "ILCoupController.h"
 #import "ILMTimeLogo.h"
-<<<<<<< HEAD
 #import "ILCoupNetPackage.h"
 #import "ILActivity.h"
 #import "ILActivityView.h"
-=======
 #import "Constant.h"
->>>>>>> d615765ce84acf41439a46a68e3460bfa8bec880
 
 @interface ILCoupController ()<NSURLConnectionDataDelegate,UIScrollViewDelegate>{
     CGFloat _scrollViewMaringLelf;
@@ -32,7 +29,6 @@
 
 @implementation ILCoupController
 
-<<<<<<< HEAD
 - (void)viewDidLoad
 {
      _scrollViewMaringLelf=50;
@@ -83,7 +79,13 @@
 
 -(void)initViews{
     //标题
+    NSMutableDictionary *titleAttr=[NSMutableDictionary dictionary];
+    titleAttr[NSForegroundColorAttributeName]=[UIColor whiteColor];
+    titleAttr[NSFontAttributeName]=[UIFont systemFontOfSize:17];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:titleAttr];
     self.navigationItem.title=@"限时活动";
+    
     //背景
     UIImage *bg=[UIImage imageNamed:@"recommend_index_trailer_blackbg"];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:bg]];
@@ -121,7 +123,6 @@
     [_prevHeightlightView setHeightlight:NO];
     _prevHeightlightView=currentView;
 }
-=======
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	if (self) {
@@ -130,21 +131,5 @@
 	return self;
 }
 
-- (void)viewDidLoad {
-	[super viewDidLoad];
-	[self initData];
-	[self initViews];
-}
 
--(void)initData {
-	
-}
-
--(void)initViews {
-	self.navigationItem.title = @"限时活动";
-	UIImage *bg = [UIImage imageNamed:RECOMMEND_INDEX_TRAILER_BG];
-	[self.view setBackgroundColor:[UIColor colorWithPatternImage:bg]];
-}
-
->>>>>>> d615765ce84acf41439a46a68e3460bfa8bec880
 @end
