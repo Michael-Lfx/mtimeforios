@@ -13,4 +13,8 @@
 
 @property(nonatomic,strong)ILActivity * activity;
 
++(instancetype)activityView;
+
+
+
 @end

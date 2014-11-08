@@ -13,8 +13,12 @@
 #import "ILMTimeLogo.h"
 #import "ILCoupNetPackage.h"
 #import "ILActivity.h"
+#import "ILActivityView.h"
 
-@interface ILCoupController ()<NSURLConnectionDataDelegate>
+@interface ILCoupController ()<NSURLConnectionDataDelegate,UIScrollViewDelegate>{
+    CGFloat _scrollViewMaringLelf;
+    CGFloat _activityViewW;
+}
 
 @property(nonatomic,strong)ILCoupNetPackage * coupNetPackage;
 @property(nonatomic,strong)UIScrollView * activitiesScrollView;
@@ -23,32 +27,34 @@
 
 @implementation ILCoupController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
+     _scrollViewMaringLelf=50;
+    _activityViewW=250;
     [super viewDidLoad];
     [self initData];
     [self initViews];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
 #pragma mark -propery
 -(void)setCoupNetPackage:(ILCoupNetPackage *)coupNetPackage{
+
+    //CGFloat activityW=250;
+    CGFloat activityH=500;
+    CGFloat contentW=_activityViewW*coupNetPackage.activities.count;
+        self.activitiesScrollView.frame=CGRectMake(0, 70, contentW, activityH);
+    self.activitiesScrollView.contentSize=CGSizeMake(contentW*1.3, 300);
+
     
-    self.activitiesScrollView.contentSize=CGSizeMake(200*coupNetPackage.activities.count, 500);
-    for (ILActivity *activity in coupNetPackage.activities) {
+    for (int i=0; i<coupNetPackage.activities.count; i++) {
+        ILActivity *activity=coupNetPackage.activities[i];
+        ILActivityView *activityView= [ILActivityView activityView];
+        activityView.frame=CGRectMake(240*i, 0, _activityViewW, activityH);
+        activityView.activity=activity;
+        activityView.tag=i;
+        UITapGestureRecognizer *tapGr=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(changScrollViewIndex:)];
+        [activityView addGestureRecognizer:tapGr];
+        [self.activitiesScrollView addSubview:activityView];
     }
 }
 
@@ -65,15 +71,27 @@
     UIImage *bg=[UIImage imageNamed:@"recommend_index_trailer_blackbg"];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:bg]];
     
-    self.activitiesScrollView=[[UIScrollView alloc]initWithFrame:self.view.bounds];
+    self.activitiesScrollView=[[UIScrollView alloc]init];
+    self.activitiesScrollView.showsVerticalScrollIndicator=NO;
+    self.activitiesScrollView.contentInset=UIEdgeInsetsMake(0, _scrollViewMaringLelf, 0, 0);
+    self.activitiesScrollView.delegate=self;
+    //self.activitiesScrollView.pagingEnabled=YES;
     [self.view addSubview:self.activitiesScrollView];
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
-    NSLog(@"有响应了");
     NSDictionary *obj= [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     self.coupNetPackage= [ILCoupNetPackage coupNetPackageWithDictionary:obj];
 }
 
+#pragma mark -ScrollViewDelegate
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+}
 
+#pragma mark -Events
+-(void)changScrollViewIndex:(UIGestureRecognizer *)gesture{
+    int index=gesture.view.tag;
+    [self.activitiesScrollView setContentOffset:CGPointMake(index*_activityViewW-_scrollViewMaringLelf, 0) animated:YES];
+}
 @end

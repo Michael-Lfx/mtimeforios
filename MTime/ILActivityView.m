@@ -7,7 +7,9 @@
 //
 
 #import "ILActivityView.h"
-@interface ILActivityView()
+#import "ILActivity.h"
+
+@interface ILActivityView()<NSURLConnectionDataDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *price;
 @property (weak, nonatomic) IBOutlet UIButton *buttonText;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
@@ -21,15 +23,30 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
     }
     return self;
 }
 
 
+#pragma mark -static methods
++(instancetype)activityView{
+    ILActivityView *activityView= [[[NSBundle mainBundle]loadNibNamed:@"ActivityView"
+                                                                owner:self options:nil] lastObject];
+    activityView.backgroundColor=[UIColor clearColor];
+    return activityView;
+}
+
 #pragma mark -property
 -(void)setActivity:(ILActivity *)activity{
-    //TODO 在这里更新模型
+    
+    [self.buttonText setTitle:activity.buttonText forState:UIControlStateNormal];
+    NSString *price=[activity.price stringByReplacingOccurrencesOfString:@"$" withString:@""];
+    [self.price setText:price];
+    
+    NSMutableURLRequest *requset=[[NSMutableURLRequest alloc]
+                                   initWithURL:[NSURL URLWithString:activity.imageUrl]];
+    [NSURLConnection connectionWithRequest:requset delegate:self];
+    
 }
 
 #pragma mark -init
@@ -37,5 +54,11 @@
     
 }
 
+
+#pragma mark -URLConnectionDelegate
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
+    UIImage *image= [UIImage imageWithData:data];
+    self.image.image=image;
+}
 
 @end
