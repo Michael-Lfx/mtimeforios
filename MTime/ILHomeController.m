@@ -8,10 +8,11 @@
 
 #import "ILHomeController.h"
 #import "ILMTimeLogo.h"
+#import "Constant.h"
 
 @interface ILHomeController ()
 
-@property(nonatomic,strong)UIButton * homeBtn;
+@property (nonatomic, strong) UIButton *homeBtn;
 
 @end
 
@@ -19,23 +20,19 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	if (self) {
+		// Custom initialization
+	}
+	return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"menu_top_bg"] forBarMetrics:UIBarMetricsDefault];
-    self.navigationItem.titleView=[ILMTimeLogo mtimLogo];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
+	[super viewDidLoad];
+	[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:MENU_TOP_BG]
+												  forBarMetrics:UIBarMetricsDefault];
+	self.navigationItem.titleView = [ILMTimeLogo mtimLogo];
 }
 
 @end

@@ -11,10 +11,10 @@
 @implementation ILMTimeLogo
 
 
-+(instancetype)mtimLogo{
-    UIImage *logo=[UIImage imageNamed:@"ele_logo_mtime"];
-    ILMTimeLogo *logoView=[[ILMTimeLogo alloc]initWithImage:logo];
-    return logoView;
++ (instancetype)mtimLogo {
+	UIImage *logo = [UIImage imageNamed:@"ele_logo_mtime"];
+	ILMTimeLogo *logoView = [[ILMTimeLogo alloc] initWithImage:logo];
+	return logoView;
 }
 
 @end
