@@ -174,7 +174,7 @@
     
     
     if ([_prevTabBarBtn isKindOfClass:[ILTabBarNormalButton class]]) {
-        ILTabBarNormalButton *btn=(ILTabBarNormalButton *)tabBarBtn;
+        ILTabBarNormalButton *btn=(ILTabBarNormalButton *)_prevTabBarBtn;
         [btn setHieghtLight:NO];
     }
     

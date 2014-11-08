@@ -26,7 +26,7 @@
     tabBarCtrller.selectedIndex=2;
     
     
-    [tabBarCtrller.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"menu_top_bg"] forBarMetrics:UIBarMetricsDefault];
+
     
     
     ILTabBar *myTabBar=[[ILTabBar alloc]initWithFrame:tabBarCtrller.tabBar.frame];

@@ -7,6 +7,7 @@
 //
 
 #import "ILCoupController.h"
+#import "ILMTimeLogo.h"
 
 @interface ILCoupController ()
 
@@ -36,6 +37,8 @@
 
 
 -(void)initViews{
+    self.navigationItem.titleView=[ILMTimeLogo mtimLogo];
+    
     UIImage *bg=[UIImage imageNamed:@"recommend_index_trailer_blackbg"];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:bg]];
 }
