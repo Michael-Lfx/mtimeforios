@@ -49,16 +49,16 @@
     
 }
 
-#pragma mark -init
--(void)initViews{
-    
-}
-
-
 #pragma mark -URLConnectionDelegate
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
     UIImage *image= [UIImage imageWithData:data];
     self.image.image=image;
+}
+
+#pragma mark -publicMethods
+-(void)setHeightlight:(BOOL)isHeightlight{
+    self.layer.opacity=isHeightlight?1:0.5;
+    [self setNeedsDisplay];
 }
 
 @end

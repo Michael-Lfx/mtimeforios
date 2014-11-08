@@ -15,6 +15,6 @@
 
 +(instancetype)activityView;
 
-
+-(void)setHeightlight:(BOOL)isHeightlight;
 
 @end
