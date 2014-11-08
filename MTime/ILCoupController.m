@@ -78,18 +78,24 @@
 }
 
 -(void)initViews{
-	//标题
-	self.navigationItem.title=@"限时活动";
-	//背景
-	UIImage *bg=[UIImage imageNamed:@"recommend_index_trailer_blackbg"];
-	[self.view setBackgroundColor:[UIColor colorWithPatternImage:bg]];
-	//初始化UIScrollView
-	self.activitiesScrollView=[[UIScrollView alloc]init];
-	self.activitiesScrollView.showsVerticalScrollIndicator=NO;
-	self.activitiesScrollView.contentInset=UIEdgeInsetsMake(0, _scrollViewMaringLelf, 0, 0);
-	self.activitiesScrollView.delegate=self;
-	//self.activitiesScrollView.pagingEnabled=YES;
-	[self.view addSubview:self.activitiesScrollView];
+    //标题
+    NSMutableDictionary *titleAttr=[NSMutableDictionary dictionary];
+    titleAttr[NSForegroundColorAttributeName]=[UIColor whiteColor];
+    titleAttr[NSFontAttributeName]=[UIFont systemFontOfSize:17];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:titleAttr];
+    self.navigationItem.title=@"限时活动";
+    
+    //背景
+    UIImage *bg=[UIImage imageNamed:@"recommend_index_trailer_blackbg"];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:bg]];
+    //初始化UIScrollView
+    self.activitiesScrollView=[[UIScrollView alloc]init];
+    self.activitiesScrollView.showsVerticalScrollIndicator=NO;
+    self.activitiesScrollView.contentInset=UIEdgeInsetsMake(0, _scrollViewMaringLelf, 0, 0);
+    self.activitiesScrollView.delegate=self;
+    //self.activitiesScrollView.pagingEnabled=YES;
+    [self.view addSubview:self.activitiesScrollView];
 }
 
 #pragma mark -NSConnectionDelegate
