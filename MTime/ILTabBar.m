@@ -9,7 +9,9 @@
 #import "ILTabBar.h"
 #import "ILTabBarNormalButton.h"
 #import "ILButtonWithNoHeightLight.h"
+#import "ILTabBarTopicButton.h"
 #define ILTopicIndex 3
+#define ILHomeIndex 2
 
 @interface ILTabBar (){
     UIView *_prevTabBarBtn;
@@ -78,7 +80,6 @@
     }
     UIButton *topicBtn= self.btns[ILTopicIndex];
     topicBtn.frame=CGRectMake(ILTopicIndex*btnW+15, 10, 35, 35);
-    //TODO:HOME 时光精选得特别做
 }
 
 #pragma mark -init
@@ -99,7 +100,7 @@
     [homeBtn setImage:homeBtnBg forState:UIControlStateNormal];
     [self addSubview:homeBtn];
     self.homeBtn=homeBtn;
-    self.homeBtn.tag=2;
+    self.homeBtn.tag=ILHomeIndex;
     [self.btns addObject:self.homeBtn];
 }
 
@@ -114,7 +115,7 @@
 }
 
 - (void)initBtns{
-    
+    // TODO 为了方便heightlight背景统一切换,这里需要为他们统一套一层皮
     NSArray *tabBarPics=@[@"botmenu_icon_ciname",
                           @"botmenu_icon_coup",
                           @"botmenu_icon_index",
@@ -139,7 +140,7 @@
             [self addSubview:topicBtn];
             continue;
         }
-        if (i==2) {
+        if (i==ILHomeIndex) {
             [self initHomeButton];
             continue;
         }
@@ -150,10 +151,6 @@
         [tabBarBtn setTitle:tabBarTitles[i]];
         [self.btns addObject:tabBarBtn];
         [self addSubview:tabBarBtn];
-        
-        
-        
-        
     }
     
 
@@ -167,7 +164,9 @@
     }
 }
 
--(void)tabExchange:(UIView *)tabBarBtn{
+-(void)tabExchange:(UITapGestureRecognizer *)tapGestureRecoginizer{
+    UIView *tabBarBtn=tapGestureRecoginizer.view;
+    
     if ([tabBarBtn isKindOfClass:[ILTabBarNormalButton class]]) {
         ILTabBarNormalButton *btn=(ILTabBarNormalButton *)tabBarBtn;
         [btn setHieghtLight:YES];
@@ -179,10 +178,21 @@
         [btn setHieghtLight:NO];
     }
     
+    if ([tabBarBtn isKindOfClass:[ILTabBarTopicButton class]]) {
+        ILTabBarNormalButton *btn=(ILTabBarNormalButton *)tabBarBtn;
+        btn.backgroundIcon.backgroundColor=[UIColor redColor];
+    }
     
-    if ([self.delegate respondsToSelector:@selector(tabBarToggleFrom: to:)]) {
+    if ([_prevTabBarBtn isKindOfClass:[ILTabBarTopicButton class]]) {
+        ILTabBarNormalButton *btn=(ILTabBarNormalButton *)_prevTabBarBtn;
+        btn.backgroundIcon.backgroundColor=[UIColor clearColor];
+    }
+    
+    
+    if ([self.delegate respondsToSelector:@selector(tabBarToggleFrom: andTo:)]) {
         [self.delegate tabBarToggleFrom:_prevTabBarBtn.tag andTo:tabBarBtn.tag];
     }
+    _prevTabBarBtn=tabBarBtn;
 }
 
 @end

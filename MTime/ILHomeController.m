@@ -7,6 +7,7 @@
 //
 
 #import "ILHomeController.h"
+#import "ILMTimeLogo.h"
 
 @interface ILHomeController ()
 
@@ -29,9 +30,7 @@
 {
     [super viewDidLoad];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"menu_top_bg"] forBarMetrics:UIBarMetricsDefault];
-    UIImage *logo=[UIImage imageNamed:@"ele_logo_mtime"];
-    UIImageView *logoView=[[UIImageView alloc]initWithImage:logo];
-    self.navigationItem.titleView=logoView;
+    self.navigationItem.titleView=[ILMTimeLogo mtimLogo];
 }
 
 - (void)didReceiveMemoryWarning

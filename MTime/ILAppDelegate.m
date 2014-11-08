@@ -10,6 +10,10 @@
 #import "ILTabBarController.h"
 #import "ILTabBar.h"
 
+@interface ILAppDelegate ()<ILTabBarDelegate>
+
+@end
+
 @implementation ILAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -26,12 +30,19 @@
     
     
     ILTabBar *myTabBar=[[ILTabBar alloc]initWithFrame:tabBarCtrller.tabBar.frame];
+    myTabBar.delegate=self;
+    
     [tabBarCtrller.view addSubview:myTabBar];
     [tabBarCtrller.tabBar removeFromSuperview];
     self.window.rootViewController=tabBarCtrller;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+-(void)tabBarToggleFrom:(NSInteger)from andTo:(NSInteger)to{
+    ILTabBarController *tabbarCtrl= (ILTabBarController *)self.window.rootViewController;
+    tabbarCtrl.selectedIndex=to;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

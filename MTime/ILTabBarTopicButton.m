@@ -7,6 +7,13 @@
 //
 
 #import "ILTabBarTopicButton.h"
+@interface ILTabBarTopicButton()
+
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *icon;
+
+
+@end
 
 @implementation ILTabBarTopicButton
 

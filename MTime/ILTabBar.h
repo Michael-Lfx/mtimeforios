@@ -11,7 +11,7 @@
 @protocol ILTabBarDelegate <NSObject>
 
 @optional
--(void)tabBarToggleFrom:(NSInteger)form andTo:(NSInteger)to;
+-(void)tabBarToggleFrom:(NSInteger)from andTo:(NSInteger)to;
 
 @end
 
