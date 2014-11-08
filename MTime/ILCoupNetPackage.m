@@ -7,30 +7,35 @@
 //
 
 #import "ILCoupNetPackage.h"
+#import "ILActivity.h"
+
+#define SUCCESS    @"success"
+#define ERROR      @"error"
+#define ACTIVITIES @"activities"
 
 @implementation ILCoupNetPackage
--(instancetype)initWithDictionary:(NSDictionary *)dic{
-    if (self=[super init]) {
-        self.success=dic[@"success"];
-        self.error=dic[@"error"];
-        NSArray *activities= dic[@"activities"];
-        for (NSDictionary *ativityKeyValue in activities) {
-            [self.activities addObject:[ILActivity activityWithDic:ativityKeyValue]];
-        }
-    }
-    return self;
+- (instancetype)initWithDictionary:(NSDictionary *)dic {
+	if (self = [super init]) {
+		self.success = dic[SUCCESS];
+		self.error = dic[ERROR];
+		NSArray *activities= dic[ACTIVITIES];
+		for (NSDictionary *ativityKeyValue in activities) {
+			[self.activities addObject:[ILActivity activityWithDic:ativityKeyValue]];
+		}
+	}
+	return self;
 }
 
-+(instancetype)coupNetPackageWithDictionary:(NSDictionary *)dic{
-    return [[self alloc]initWithDictionary:dic];
++ (instancetype)coupNetPackageWithDictionary:(NSDictionary *)dic {
+	return [[self alloc]initWithDictionary:dic];
 }
 
 
--(NSMutableArray *)activities{
-    if (_activities==nil) {
-        _activities=[NSMutableArray array];
-    }
-    return _activities;
+- (NSMutableArray *)activities {
+	if (_activities == nil) {
+		_activities = [NSMutableArray array];
+	}
+	return _activities;
 }
 
 @end

@@ -10,14 +10,14 @@
 
 @implementation ILActivity
 
--(instancetype)initWithDic:(NSDictionary *)dic{
-    if (self=[super init]) {
+- (instancetype)initWithDic:(NSDictionary *)dic {
+    if (self = [super init]) {
         [self setValuesForKeysWithDictionary:dic];
     }
     return self;
 }
 
-+(instancetype)activityWithDic:(NSDictionary *)dic{
++ (instancetype)activityWithDic:(NSDictionary *)dic {
     return [[self alloc]initWithDic:dic];
 }
 

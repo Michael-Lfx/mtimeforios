@@ -7,20 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ILActivity.h"
 
 @interface ILCoupNetPackage : NSObject
 
-@property(nonatomic,strong)NSString * success;
+@property (nonatomic, strong) NSString *success;
 
-@property(nonatomic,strong)NSString * error;
+@property (nonatomic, strong) NSString *error;
 
-/*
- *活动
+/**
+ *  活动
  */
-@property(nonatomic,strong)NSMutableArray * activities;
+@property (nonatomic, strong) NSMutableArray *activities;
 
--(instancetype)initWithDictionary:(NSDictionary *)dic;
+- (instancetype)initWithDictionary:(NSDictionary *)dic;
 
-+(instancetype)coupNetPackageWithDictionary:(NSDictionary *)dic;
++ (instancetype)coupNetPackageWithDictionary:(NSDictionary *)dic;
+
 @end
