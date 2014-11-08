@@ -41,16 +41,19 @@
 #pragma mark -propery
 -(void)setCoupNetPackage:(ILCoupNetPackage *)coupNetPackage{
 	
-	CGFloat activityH=500;
+	CGFloat activityH=300;
 	CGFloat contentW=_activityViewW*coupNetPackage.activities.count;
-	self.activitiesScrollView.frame=CGRectMake(0, 70, contentW, activityH);
-	self.activitiesScrollView.contentSize=CGSizeMake(contentW, 300);
-	
+	self.activitiesScrollView.frame=CGRectMake(0, 100, contentW, activityH);
+    [self.activitiesScrollView setContentSize:CGSizeMake(contentW,0)];//height为0,禁止上下滚动
+    self.activitiesScrollView.showsVerticalScrollIndicator=NO;
+    self.activitiesScrollView.showsHorizontalScrollIndicator=NO;
+    self.activitiesScrollView.contentOffset=CGPointMake(0, 0);
 	
 	for (int i=0; i<coupNetPackage.activities.count; i++) {
 		//获取实体
 		ILActivity *activity=coupNetPackage.activities[i];
 		ILActivityView *activityView= [ILActivityView activityView];
+        //activityView.backgroundColor=[UIColor blueColor];
 		//配置视图
 		activityView.frame=CGRectMake(_activityViewW*i, 0, _activityViewW, activityH);
 		activityView.activity=activity;
@@ -91,10 +94,7 @@
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:bg]];
     //初始化UIScrollView
     self.activitiesScrollView=[[UIScrollView alloc]init];
-    self.activitiesScrollView.showsVerticalScrollIndicator=NO;
-    self.activitiesScrollView.contentInset=UIEdgeInsetsMake(0, _scrollViewMaringLelf, 0, 0);
     self.activitiesScrollView.delegate=self;
-    //self.activitiesScrollView.pagingEnabled=YES;
     [self.view addSubview:self.activitiesScrollView];
 }
 
@@ -111,7 +111,7 @@
 
 #pragma mark -Events
 -(void)changScrollViewIndex:(UIGestureRecognizer *)gesture{
-	int index=gesture.view.tag;
+	NSInteger index=gesture.view.tag;
 	[self.activitiesScrollView setContentOffset:CGPointMake(index*_activityViewW-_scrollViewMaringLelf, 0) animated:YES];
 	ILActivityView *currentView=(ILActivityView *)gesture.view;
 	//两次点击同一个视图

@@ -37,7 +37,7 @@
 		67964C7A1A0DBC500042E89A /* ILCoupNetPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 67964C791A0DBC500042E89A /* ILCoupNetPackage.m */; };
 		67964C7D1A0DBC960042E89A /* ILActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 67964C7C1A0DBC960042E89A /* ILActivity.m */; };
 		67964C801A0DBD780042E89A /* ILActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67964C7F1A0DBD780042E89A /* ILActivityView.m */; };
-		67964C821A0DCBDE0042E89A /* ActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67964C811A0DCBDE0042E89A /* ActivityView.xib */; };
+		67BEAEE11A0E20AC0092ACC2 /* ActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67BEAEE31A0E20AC0092ACC2 /* ActivityView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,7 +101,7 @@
 		67964C7C1A0DBC960042E89A /* ILActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILActivity.m; sourceTree = "<group>"; };
 		67964C7E1A0DBD780042E89A /* ILActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILActivityView.h; sourceTree = "<group>"; };
 		67964C7F1A0DBD780042E89A /* ILActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILActivityView.m; sourceTree = "<group>"; };
-		67964C811A0DCBDE0042E89A /* ActivityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityView.xib; sourceTree = "<group>"; };
+		67BEAEE21A0E20AC0092ACC2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ActivityView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,7 +196,7 @@
 			children = (
 				67964C7E1A0DBD780042E89A /* ILActivityView.h */,
 				67964C7F1A0DBD780042E89A /* ILActivityView.m */,
-				67964C811A0DCBDE0042E89A /* ActivityView.xib */,
+				67BEAEE31A0E20AC0092ACC2 /* ActivityView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -446,7 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67829F521A0A5B6A009174DF /* Main.storyboard in Resources */,
-				67964C821A0DCBDE0042E89A /* ActivityView.xib in Resources */,
+				67BEAEE11A0E20AC0092ACC2 /* ActivityView.xib in Resources */,
 				67829F681A0A6780009174DF /* TabBarNormalButton.xib in Resources */,
 				67829F2D1A0A5B29009174DF /* InfoPlist.strings in Resources */,
 				67829F351A0A5B29009174DF /* Images.xcassets in Resources */,
@@ -522,6 +522,14 @@
 				67829F451A0A5B29009174DF /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		67BEAEE31A0E20AC0092ACC2 /* ActivityView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67BEAEE21A0E20AC0092ACC2 /* en */,
+			);
+			name = ActivityView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
