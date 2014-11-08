@@ -33,6 +33,7 @@
 		67829F681A0A6780009174DF /* TabBarNormalButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67829F671A0A6780009174DF /* TabBarNormalButton.xib */; };
 		67829F6B1A0A6DE7009174DF /* ILTabBarIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 67829F6A1A0A6DE7009174DF /* ILTabBarIcon.m */; };
 		67964C741A0DA53E0042E89A /* ILMTimeLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 67964C731A0DA53E0042E89A /* ILMTimeLogo.m */; };
+		67964C771A0DAD200042E89A /* ILTabBarHeightLignhtImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 67964C761A0DAD200042E89A /* ILTabBarHeightLignhtImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		67829F6A1A0A6DE7009174DF /* ILTabBarIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILTabBarIcon.m; sourceTree = "<group>"; };
 		67964C721A0DA53E0042E89A /* ILMTimeLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILMTimeLogo.h; sourceTree = "<group>"; };
 		67964C731A0DA53E0042E89A /* ILMTimeLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILMTimeLogo.m; sourceTree = "<group>"; };
+		67964C751A0DAD200042E89A /* ILTabBarHeightLignhtImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILTabBarHeightLignhtImage.h; sourceTree = "<group>"; };
+		67964C761A0DAD200042E89A /* ILTabBarHeightLignhtImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILTabBarHeightLignhtImage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +343,8 @@
 				67756DD81A0D1F7E004FA6B3 /* ILTabBarTopicButton.m */,
 				67964C721A0DA53E0042E89A /* ILMTimeLogo.h */,
 				67964C731A0DA53E0042E89A /* ILMTimeLogo.m */,
+				67964C751A0DAD200042E89A /* ILTabBarHeightLignhtImage.h */,
+				67964C761A0DAD200042E89A /* ILTabBarHeightLignhtImage.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -448,6 +453,7 @@
 				67756DD11A0D0D4E004FA6B3 /* ILButtonWithNoHeightLight.m in Sources */,
 				67756DC71A0D0353004FA6B3 /* ILBaseController.m in Sources */,
 				67756DD91A0D1F7E004FA6B3 /* ILTabBarTopicButton.m in Sources */,
+				67964C771A0DAD200042E89A /* ILTabBarHeightLignhtImage.m in Sources */,
 				67829F601A0A5E9E009174DF /* ILTabBar.m in Sources */,
 				67829F2F1A0A5B29009174DF /* main.m in Sources */,
 				67964C741A0DA53E0042E89A /* ILMTimeLogo.m in Sources */,
