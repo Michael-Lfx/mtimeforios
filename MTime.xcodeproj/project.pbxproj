@@ -34,6 +34,10 @@
 		67829F6B1A0A6DE7009174DF /* ILTabBarIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 67829F6A1A0A6DE7009174DF /* ILTabBarIcon.m */; };
 		67964C741A0DA53E0042E89A /* ILMTimeLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 67964C731A0DA53E0042E89A /* ILMTimeLogo.m */; };
 		67964C771A0DAD200042E89A /* ILTabBarHeightLignhtImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 67964C761A0DAD200042E89A /* ILTabBarHeightLignhtImage.m */; };
+		67964C7A1A0DBC500042E89A /* ILCoupNetPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 67964C791A0DBC500042E89A /* ILCoupNetPackage.m */; };
+		67964C7D1A0DBC960042E89A /* ILActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 67964C7C1A0DBC960042E89A /* ILActivity.m */; };
+		67964C801A0DBD780042E89A /* ILActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67964C7F1A0DBD780042E89A /* ILActivityView.m */; };
+		67964C821A0DCBDE0042E89A /* ActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67964C811A0DCBDE0042E89A /* ActivityView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +94,13 @@
 		67964C731A0DA53E0042E89A /* ILMTimeLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILMTimeLogo.m; sourceTree = "<group>"; };
 		67964C751A0DAD200042E89A /* ILTabBarHeightLignhtImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILTabBarHeightLignhtImage.h; sourceTree = "<group>"; };
 		67964C761A0DAD200042E89A /* ILTabBarHeightLignhtImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILTabBarHeightLignhtImage.m; sourceTree = "<group>"; };
+		67964C781A0DBC500042E89A /* ILCoupNetPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILCoupNetPackage.h; sourceTree = "<group>"; };
+		67964C791A0DBC500042E89A /* ILCoupNetPackage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILCoupNetPackage.m; sourceTree = "<group>"; };
+		67964C7B1A0DBC960042E89A /* ILActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILActivity.h; sourceTree = "<group>"; };
+		67964C7C1A0DBC960042E89A /* ILActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILActivity.m; sourceTree = "<group>"; };
+		67964C7E1A0DBD780042E89A /* ILActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILActivityView.h; sourceTree = "<group>"; };
+		67964C7F1A0DBD780042E89A /* ILActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILActivityView.m; sourceTree = "<group>"; };
+		67964C811A0DCBDE0042E89A /* ActivityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +193,9 @@
 		67756DC31A0D030C004FA6B3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				67964C7E1A0DBD780042E89A /* ILActivityView.h */,
+				67964C7F1A0DBD780042E89A /* ILActivityView.m */,
+				67964C811A0DCBDE0042E89A /* ActivityView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -189,6 +203,10 @@
 		67756DC41A0D0310004FA6B3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				67964C781A0DBC500042E89A /* ILCoupNetPackage.h */,
+				67964C791A0DBC500042E89A /* ILCoupNetPackage.m */,
+				67964C7B1A0DBC960042E89A /* ILActivity.h */,
+				67964C7C1A0DBC960042E89A /* ILActivity.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -426,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67829F521A0A5B6A009174DF /* Main.storyboard in Resources */,
+				67964C821A0DCBDE0042E89A /* ActivityView.xib in Resources */,
 				67829F681A0A6780009174DF /* TabBarNormalButton.xib in Resources */,
 				67829F2D1A0A5B29009174DF /* InfoPlist.strings in Resources */,
 				67829F351A0A5B29009174DF /* Images.xcassets in Resources */,
@@ -453,14 +472,17 @@
 				67756DD11A0D0D4E004FA6B3 /* ILButtonWithNoHeightLight.m in Sources */,
 				67756DC71A0D0353004FA6B3 /* ILBaseController.m in Sources */,
 				67756DD91A0D1F7E004FA6B3 /* ILTabBarTopicButton.m in Sources */,
+				67964C7A1A0DBC500042E89A /* ILCoupNetPackage.m in Sources */,
 				67964C771A0DAD200042E89A /* ILTabBarHeightLignhtImage.m in Sources */,
 				67829F601A0A5E9E009174DF /* ILTabBar.m in Sources */,
 				67829F2F1A0A5B29009174DF /* main.m in Sources */,
+				67964C7D1A0DBC960042E89A /* ILActivity.m in Sources */,
 				67964C741A0DA53E0042E89A /* ILMTimeLogo.m in Sources */,
 				67829F5A1A0A5C66009174DF /* ILMovieController.m in Sources */,
 				67829F6B1A0A6DE7009174DF /* ILTabBarIcon.m in Sources */,
 				67829F661A0A676B009174DF /* ILTabBarNormalButton.m in Sources */,
 				67829F331A0A5B29009174DF /* ILAppDelegate.m in Sources */,
+				67964C801A0DBD780042E89A /* ILActivityView.m in Sources */,
 				670611A31A0BBBE000D01500 /* ILHomeController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
