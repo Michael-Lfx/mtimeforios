@@ -11,12 +11,12 @@
 @protocol ILTabBarDelegate <NSObject>
 
 @optional
--(void)tabBarToggleFrom:(NSInteger)from andTo:(NSInteger)to;
+- (void)tabBarToggleFrom:(NSInteger)from andTo:(NSInteger)to;
 
 @end
 
 @interface ILTabBar : UIView
 
-@property(nonatomic,weak)id<ILTabBarDelegate>  delegate;
+@property (nonatomic, weak) id<ILTabBarDelegate>  delegate;
 
 @end

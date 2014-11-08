@@ -10,7 +10,7 @@
 #import "ILTabBarController.h"
 #import "ILTabBar.h"
 
-@interface ILAppDelegate ()<ILTabBarDelegate>
+@interface ILAppDelegate () <ILTabBarDelegate>
 
 @end
 
