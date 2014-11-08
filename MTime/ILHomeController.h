@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ILBaseController.h"
 
-@interface ILHomeController :ILBaseController
+@interface ILHomeController : ILBaseController
 
 
 @end

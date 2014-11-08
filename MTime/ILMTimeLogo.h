@@ -10,6 +10,6 @@
 
 @interface ILMTimeLogo : UIImageView
 
-+(instancetype)mtimLogo;
++ (instancetype)mtimLogo;
 
 @end

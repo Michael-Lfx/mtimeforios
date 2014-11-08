@@ -11,6 +11,7 @@
 
 #import "ILCoupController.h"
 #import "ILMTimeLogo.h"
+#import "Constant.h"
 
 @interface ILCoupController ()
 
@@ -18,35 +19,28 @@
 
 @implementation ILCoupController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        
-    }
-    return self;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	if (self) {
+		
+	}
+	return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [self initData];
-    [self initViews];
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	[self initData];
+	[self initViews];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
+-(void)initData {
+	
 }
 
-
--(void)initData{
-    
+-(void)initViews {
+	self.navigationItem.title = @"限时活动";
+	UIImage *bg = [UIImage imageNamed:RECOMMEND_INDEX_TRAILER_BG];
+	[self.view setBackgroundColor:[UIColor colorWithPatternImage:bg]];
 }
 
--(void)initViews{
-    self.navigationItem.title=@"限时活动";
-    UIImage *bg=[UIImage imageNamed:@"recommend_index_trailer_blackbg"];
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:bg]];
-}
 @end

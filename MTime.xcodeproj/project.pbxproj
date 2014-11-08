@@ -47,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4CCBA7201A0DBF20009DABEF /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		670611A11A0BBBE000D01500 /* ILHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILHomeController.h; sourceTree = "<group>"; };
 		670611A21A0BBBE000D01500 /* ILHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILHomeController.m; sourceTree = "<group>"; };
 		67756DC51A0D0353004FA6B3 /* ILBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILBaseController.h; sourceTree = "<group>"; };
@@ -275,6 +276,7 @@
 				67829F2B1A0A5B29009174DF /* InfoPlist.strings */,
 				67829F2E1A0A5B29009174DF /* main.m */,
 				67829F301A0A5B29009174DF /* MTime-Prefix.pch */,
+				4CCBA7201A0DBF20009DABEF /* Constant.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
