@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ILTabBarHeightLignhtImage : UIImage
+@interface ILTabBarHeightlignthBackground : UIImage
 
 +(instancetype)image;
 

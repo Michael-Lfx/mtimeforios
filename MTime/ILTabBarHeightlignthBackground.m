@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 IL. All rights reserved.
 //
 
-#import "ILTabBarHeightLignhtImage.h"
+#import "ILTabBarHeightlignthBackground.h"
 
-@implementation ILTabBarHeightLignhtImage
+@implementation ILTabBarHeightlignthBackground
 
 +(instancetype)image{
     //TODO 留个坑

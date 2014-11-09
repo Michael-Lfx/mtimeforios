@@ -31,9 +31,8 @@
 		67829F601A0A5E9E009174DF /* ILTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 67829F5F1A0A5E9E009174DF /* ILTabBar.m */; };
 		67829F661A0A676B009174DF /* ILTabBarNormalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 67829F651A0A676B009174DF /* ILTabBarNormalButton.m */; };
 		67829F681A0A6780009174DF /* TabBarNormalButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67829F671A0A6780009174DF /* TabBarNormalButton.xib */; };
-		67829F6B1A0A6DE7009174DF /* ILTabBarIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 67829F6A1A0A6DE7009174DF /* ILTabBarIcon.m */; };
 		67964C741A0DA53E0042E89A /* ILMTimeLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 67964C731A0DA53E0042E89A /* ILMTimeLogo.m */; };
-		67964C771A0DAD200042E89A /* ILTabBarHeightLignhtImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 67964C761A0DAD200042E89A /* ILTabBarHeightLignhtImage.m */; };
+		67964C771A0DAD200042E89A /* ILTabBarHeightlignthBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 67964C761A0DAD200042E89A /* ILTabBarHeightlignthBackground.m */; };
 		67964C7A1A0DBC500042E89A /* ILCoupNetPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 67964C791A0DBC500042E89A /* ILCoupNetPackage.m */; };
 		67964C7D1A0DBC960042E89A /* ILActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 67964C7C1A0DBC960042E89A /* ILActivity.m */; };
 		67964C801A0DBD780042E89A /* ILActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67964C7F1A0DBD780042E89A /* ILActivityView.m */; };
@@ -89,12 +88,10 @@
 		67829F641A0A676B009174DF /* ILTabBarNormalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILTabBarNormalButton.h; sourceTree = "<group>"; };
 		67829F651A0A676B009174DF /* ILTabBarNormalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILTabBarNormalButton.m; sourceTree = "<group>"; };
 		67829F671A0A6780009174DF /* TabBarNormalButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarNormalButton.xib; sourceTree = "<group>"; };
-		67829F691A0A6DE7009174DF /* ILTabBarIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILTabBarIcon.h; sourceTree = "<group>"; };
-		67829F6A1A0A6DE7009174DF /* ILTabBarIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILTabBarIcon.m; sourceTree = "<group>"; };
 		67964C721A0DA53E0042E89A /* ILMTimeLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILMTimeLogo.h; sourceTree = "<group>"; };
 		67964C731A0DA53E0042E89A /* ILMTimeLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILMTimeLogo.m; sourceTree = "<group>"; };
-		67964C751A0DAD200042E89A /* ILTabBarHeightLignhtImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILTabBarHeightLignhtImage.h; sourceTree = "<group>"; };
-		67964C761A0DAD200042E89A /* ILTabBarHeightLignhtImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILTabBarHeightLignhtImage.m; sourceTree = "<group>"; };
+		67964C751A0DAD200042E89A /* ILTabBarHeightlignthBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILTabBarHeightlignthBackground.h; sourceTree = "<group>"; };
+		67964C761A0DAD200042E89A /* ILTabBarHeightlignthBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILTabBarHeightlignthBackground.m; sourceTree = "<group>"; };
 		67964C781A0DBC500042E89A /* ILCoupNetPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILCoupNetPackage.h; sourceTree = "<group>"; };
 		67964C791A0DBC500042E89A /* ILCoupNetPackage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILCoupNetPackage.m; sourceTree = "<group>"; };
 		67964C7B1A0DBC960042E89A /* ILActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILActivity.h; sourceTree = "<group>"; };
@@ -349,24 +346,30 @@
 		67829F561A0A5B90009174DF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				67D9EE9C1A0F0E79007DFFF2 /* TabBarButton */,
 				67829F5E1A0A5E9E009174DF /* ILTabBar.h */,
 				67829F5F1A0A5E9E009174DF /* ILTabBar.m */,
+				67756DCF1A0D0D4E004FA6B3 /* ILButtonWithNoHeightLight.h */,
+				67756DD01A0D0D4E004FA6B3 /* ILButtonWithNoHeightLight.m */,
+				67964C721A0DA53E0042E89A /* ILMTimeLogo.h */,
+				67964C731A0DA53E0042E89A /* ILMTimeLogo.m */,
+				67964C751A0DAD200042E89A /* ILTabBarHeightlignthBackground.h */,
+				67964C761A0DAD200042E89A /* ILTabBarHeightlignthBackground.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		67D9EE9C1A0F0E79007DFFF2 /* TabBarButton */ = {
+			isa = PBXGroup;
+			children = (
 				67829F641A0A676B009174DF /* ILTabBarNormalButton.h */,
 				67829F651A0A676B009174DF /* ILTabBarNormalButton.m */,
 				67829F671A0A6780009174DF /* TabBarNormalButton.xib */,
-				67829F691A0A6DE7009174DF /* ILTabBarIcon.h */,
-				67829F6A1A0A6DE7009174DF /* ILTabBarIcon.m */,
-				67756DCF1A0D0D4E004FA6B3 /* ILButtonWithNoHeightLight.h */,
-				67756DD01A0D0D4E004FA6B3 /* ILButtonWithNoHeightLight.m */,
 				67756DD21A0D1B70004FA6B3 /* TabbarTopicButton.xib */,
 				67756DD71A0D1F7E004FA6B3 /* ILTabBarTopicButton.h */,
 				67756DD81A0D1F7E004FA6B3 /* ILTabBarTopicButton.m */,
-				67964C721A0DA53E0042E89A /* ILMTimeLogo.h */,
-				67964C731A0DA53E0042E89A /* ILMTimeLogo.m */,
-				67964C751A0DAD200042E89A /* ILTabBarHeightLignhtImage.h */,
-				67964C761A0DAD200042E89A /* ILTabBarHeightLignhtImage.m */,
 			);
-			name = Views;
+			name = TabBarButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,13 +478,12 @@
 				67756DC71A0D0353004FA6B3 /* ILBaseController.m in Sources */,
 				67756DD91A0D1F7E004FA6B3 /* ILTabBarTopicButton.m in Sources */,
 				67964C7A1A0DBC500042E89A /* ILCoupNetPackage.m in Sources */,
-				67964C771A0DAD200042E89A /* ILTabBarHeightLignhtImage.m in Sources */,
+				67964C771A0DAD200042E89A /* ILTabBarHeightlignthBackground.m in Sources */,
 				67829F601A0A5E9E009174DF /* ILTabBar.m in Sources */,
 				67829F2F1A0A5B29009174DF /* main.m in Sources */,
 				67964C7D1A0DBC960042E89A /* ILActivity.m in Sources */,
 				67964C741A0DA53E0042E89A /* ILMTimeLogo.m in Sources */,
 				67829F5A1A0A5C66009174DF /* ILMovieController.m in Sources */,
-				67829F6B1A0A6DE7009174DF /* ILTabBarIcon.m in Sources */,
 				67829F661A0A676B009174DF /* ILTabBarNormalButton.m in Sources */,
 				67829F331A0A5B29009174DF /* ILAppDelegate.m in Sources */,
 				67964C801A0DBD780042E89A /* ILActivityView.m in Sources */,
@@ -613,7 +615,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MTime/MTime-Prefix.pch";
 				INFOPLIST_FILE = "MTime/MTime-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -626,7 +630,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MTime/MTime-Prefix.pch";
 				INFOPLIST_FILE = "MTime/MTime-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

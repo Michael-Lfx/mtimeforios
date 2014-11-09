@@ -41,19 +41,16 @@
 #pragma mark -propery
 -(void)setCoupNetPackage:(ILCoupNetPackage *)coupNetPackage{
 	
-	CGFloat activityH=300;
+	CGFloat activityH=320;
 	CGFloat contentW=_activityViewW*coupNetPackage.activities.count;
-	self.activitiesScrollView.frame=CGRectMake(0, 100, contentW, activityH);
-    [self.activitiesScrollView setContentSize:CGSizeMake(contentW,0)];//height为0,禁止上下滚动
-    self.activitiesScrollView.showsVerticalScrollIndicator=NO;
-    self.activitiesScrollView.showsHorizontalScrollIndicator=NO;
-    self.activitiesScrollView.contentOffset=CGPointMake(0, 0);
 	
+    [self.activitiesScrollView setContentSize:CGSizeMake(contentW,0)];//height为0,禁止上下滚动
+    self.activitiesScrollView.scrollEnabled=YES;
 	for (int i=0; i<coupNetPackage.activities.count; i++) {
 		//获取实体
 		ILActivity *activity=coupNetPackage.activities[i];
 		ILActivityView *activityView= [ILActivityView activityView];
-        //activityView.backgroundColor=[UIColor blueColor];
+        activityView.backgroundColor=[UIColor blueColor];
 		//配置视图
 		activityView.frame=CGRectMake(_activityViewW*i, 0, _activityViewW, activityH);
 		activityView.activity=activity;
@@ -70,6 +67,9 @@
 		//不能开启pageEnable
 		[self.activitiesScrollView addSubview:activityView];
 	}
+      self.activitiesScrollView.frame=CGRectMake(0, 100, contentW, activityH);
+        self.activitiesScrollView.contentOffset=CGPointMake(0, 0);
+    self.activitiesScrollView.backgroundColor=[UIColor redColor];
 }
 
 
@@ -107,22 +107,29 @@
 #pragma mark -ScrollViewDelegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
 	//TODO 滑动到一半是切换
+    //scrollView.contentOffset=CGPointMake(scrollView.contentOffset.x, 0);
+    NSLog(@"%f",scrollView.contentOffset.y);
 }
 
 #pragma mark -Events
 -(void)changScrollViewIndex:(UIGestureRecognizer *)gesture{
-	NSInteger index=gesture.view.tag;
-	[self.activitiesScrollView setContentOffset:CGPointMake(index*_activityViewW-_scrollViewMaringLelf, 0) animated:YES];
-	ILActivityView *currentView=(ILActivityView *)gesture.view;
-	//两次点击同一个视图
-	if ([_prevHeightlightView isEqual:gesture.view]) {
-		return;
-	}
-	//视图高亮切换
-	[currentView setHeightlight:YES];
-	[_prevHeightlightView setHeightlight:NO];
-	_prevHeightlightView=currentView;
+    ILActivityView *targetView=(ILActivityView *)gesture.view;
+    [self chagneActivity:targetView];
 }
+
+-(void)chagneActivity:(ILActivityView *)activityView{
+
+    //两次点击同一个视图
+    if ([_prevHeightlightView isEqual:activityView]) {
+        return;
+    }
+    [self.activitiesScrollView setContentOffset:CGPointMake(activityView.frame.origin.x-_scrollViewMaringLelf, 0) animated:YES];
+    //视图高亮切换
+    [activityView setHeightlight:YES];
+    [_prevHeightlightView setHeightlight:NO];
+    _prevHeightlightView=activityView;
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -131,5 +138,7 @@
 	}
 	return self;
 }
+
+
 
 @end
